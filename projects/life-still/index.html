@@ -16,25 +16,25 @@
 
 </head>
 <body>
-  <div class="main-container">
     <div class="nav">
         <ul>
         <li class="nav-item"><a href="/index.html">eros gaspardo</a></li>
         </ul>
-        <ul class="nav-right">
         <li class="nav-item"><a href="/about/index.html">about</a></li>
     </ul>    
     </div>
 
+<body>
+
 <div class="image-container">
-  <img id="displayedImage" src="./atena/1.jpg">
+  <img id="displayedImage" src="/projects/img/1.jpg">
 
   
 </div>
 
 <div class="bottom-info">
     <div class="left">
-            <div class="projectname">Life, Still</div>
+            <div class="projectname">to know a stone</div>
             
     </div>
 <div class="right">
@@ -60,15 +60,14 @@
   <br>   
   <br>
   Editorial Project by <b><a href="https://instagram.com/rob.erto.lenza/">Roberto Lenza</a></b>
-</div>
 <script>
 var imageFilenames = [];
 var currentIndex = 0;
 var slideshowInterval; // Variable to hold the interval for the slideshow
 
 // Populate the image filenames array (assuming image filenames are sequential)
-var numberOfImages = 58; // Adjust this to the number of images you have
-var folderPath = "/projects/life-still/atena/"; // Change this to your folder path
+var numberOfImages = 2; // Adjust this to the number of images you have
+var folderPath = "/projects/to-know-a-stone/stone/"; // Change this to your folder path
 for (var i = 1; i <= numberOfImages; i++) {
   imageFilenames.push(folderPath + i + ".jpg");
 }
@@ -79,6 +78,8 @@ function changeImage(nextIndex) {
   var image = document.getElementById("displayedImage");
   image.src = imageFilenames[currentIndex]; // Update src directly without fade
 }
+
+
 
 // Function to advance to the next image
 function nextImage() {
