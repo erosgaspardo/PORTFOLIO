@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Eros Gaspardo">
+    <meta name="description" content="Eros Gaspardo is a photographer and visual artist working between Venice and Urbino">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/icons/favicon/site.webmanifest">
+    <link rel="stylesheet" href="/styles.css" />
+
+    <title>Eros Gaspardo</title>
+
+</head>
+<body>
+  <div class="main-container">
+    <div class="nav">
+        <ul>
+        <li class="nav-item"><a href="/index.html">eros gaspardo</a></li>
+        </ul>
+        <ul class="nav-right">
+        <li class="nav-item"><a href="/about/index.html">about</a></li>
+    </ul>    
+    </div>
+
+<div class="image-container">
+  <img id="displayedImage" src="./atena/1.jpg">
+
+  
+</div>
+
+<div class="bottom-info">
+    <div class="left">
+            <div class="projectname">il fasmide</div>
+            
+    </div>
+<div class="right">
+    <div class="moreinfo">info &#8628</div>
+</div>
+
+</div>
+
+</div>
+<div class="project-text">
+    Il Fasmide is an analog photography project that investigates the extreme subjectivity of places and how they, regardless of them being natural, urban or personal, are influenced by one's emotions, experiences and sensibilities.The Venetian lagoon has always been an object of reflection and criticism because of its extreme fragility and the challenges it poses to those who approach it. 
+  <br>
+  <br>
+  Wanting to eschew these difficult issues, which have unfortunately become clichés by now, the goal of the project is to encapsulate moments of solitary and almost poetic reality of lagoon life and its metropolitan reality, which often remains ignored. The fragile ecosystem that makes up the lagoon unfolds before our eyes in its purest and most poetic reality only by being within it. This world is jealously guarded and shown only to those who really know how to look.
+  <br>
+  <br>
+  ONGOING
+</div>
+<script>
+var imageFilenames = [];
+var currentIndex = 0;
+var slideshowInterval; // Variable to hold the interval for the slideshow
+
+// Populate the image filenames array (assuming image filenames are sequential)
+var numberOfImages = 11; // Adjust this to the number of images you have
+var folderPath = "/projects/il-fasmide/fasmide/"; // Change this to your folder path
+for (var i = 1; i <= numberOfImages; i++) {
+  imageFilenames.push(folderPath + i + ".jpg");
+}
+
+// Function to change the displayed image
+function changeImage(nextIndex) {
+  currentIndex = nextIndex % imageFilenames.length;
+  var image = document.getElementById("displayedImage");
+  image.src = imageFilenames[currentIndex]; // Update src directly without fade
+}
+
+// Function to advance to the next image
+function nextImage() {
+  changeImage(currentIndex + 1);
+}
+
+// Add click event listener to the displayed image
+document.getElementById("displayedImage").addEventListener("click", function(event) {
+  clearInterval(slideshowInterval); // Clear slideshow interval on click
+  changeImage(event.clientX - this.getBoundingClientRect().left < this.offsetWidth / 2 ? currentIndex - 1 : currentIndex + 1);
+});
+
+// Start the slideshow
+slideshowInterval = setInterval(nextImage, 3000); // Change 3000 to the desired interval in milliseconds
+
+// Load the first image
+document.getElementById("displayedImage").src = imageFilenames[currentIndex];
+
+
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>   
+    <script src="/main.js"></script>
+    
+</body>
+</html>

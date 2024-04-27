@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Eros Gaspardo">
+    <meta name="description" content="Eros Gaspardo is a photographer and visual artist working between Venice and Urbino">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/icons/favicon/site.webmanifest">
+    <link rel="stylesheet" href="/styles.css" />
+
+    <title>La Boîte Bleue</title>
+
+</head>
+<body>
+  <div class="main-container">
+    <div class="nav">
+        <ul>
+        <li class="nav-item"><a href="/index.html">eros gaspardo</a></li>
+        </ul>
+        <ul class="nav-right">
+        <li class="nav-item"><a href="/about/index.html">about</a></li>
+    </ul>    
+    </div>
+
+<div class="image-container">
+  <img id="displayedImage" src="./atena/1.jpg">
+
+  
+</div>
+
+<div class="bottom-info">
+    <div class="left">
+            <div class="projectname">la boîte bleue</div>
+            
+    </div>
+<div class="right">
+    <div class="moreinfo">info &#8628</div>
+</div>
+
+</div>
+
+</div>
+<div class="project-text">
+  How can a memory turn into something indecipherable?
+    <br>
+    <br>
+    The starting point underlying this research is a family history rooted in the Magredi of Friuli. Giuseppe Costantin is one of the few photographers present in the rural reality that characterizes the northeast. A blacksmith by profession, he learned the craft of photography in Argentina, becoming a reference point once he returned to his hometown of Arba, where he founded his photography studio. Upon his death, a small part of the studio's photographic inheritance would be divided among his four children while the remainder was destroyed by a fire that broke out in the studio house. A small blue tin box was saved thanks to his daughter Ondina who kept it until she forgot about it. Ondina's figure is the only one recognizable in the rolls of film preserved inside the box while all the other subjects are indistinguishable both to her eyes and to ours. 
+    <br>
+    <br>
+    As in Catalan artist Lúa Codrech's "Recopilar las fotografías sin memoria del archivo familiar," the family album loses its own memory, transforming itself into an actual objet trouvée in which exploration, photographic montage, and collage return a family history that is transformed from private and inaccessible to collective. Memory, once pristine, is now fragmented and unrecognizable: the images restore a timeless dimension in which the Barthesian "ça-a-été" is irreparably altered. The box is transformed from a personal and intimate place into a true surrealist objet trouvé: what were the precious memories of a family become Duchampian ready-mades that, through collages, montages and transparencies, take on a universal value. Each of us possesses a photographic legacy made up of rolls of film, postcards, and passport photos that tell our own story, the constant of which, excluding the subjects represented, is an analog medium that fixes in the real world a temporality that distinguishes us and is destined to vanish. 
+    <br>   
+    <br>
+    ISIA U 2023
+    <br>
+    <br>
+    Supervision<br>
+    <b><a href="https://mariocresci.it/">Mario Cresci</a>, <a href="https://instagram.com/gaz.zeneli.studio/">Gazmend Zeneli</a></b>   
+    <br>
+    <br>
+    Editorial Project<br>
+    <b><a href="https://instagram.com/studiofidler/">Obi Fidler</a>, <a href="https://instagram.com/emmad.ombr/">Emma Watson-Dombre</a></b>
+    <br>
+    <br>
+    Printed in <b>ISIA U</b>
+                
+</div>
+<script>
+var imageFilenames = [];
+var currentIndex = 0;
+
+// Populate the image filenames array (assuming image filenames are sequential)
+var numberOfImages = 98; // Adjust this to the number of images you have
+var folderPath = "./cresci/"; // Change this to your folder path
+for (var i = 1; i <= numberOfImages; i++) {
+  imageFilenames.push(folderPath + i + ".jpg");
+}
+
+// Function to change the displayed image
+function changeImage(event) {
+  var clickedX = event.clientX - this.getBoundingClientRect().left; // X-coordinate relative to image
+  if (clickedX < this.offsetWidth / 2) {
+    // Clicked on the left side of the image
+    currentIndex = (currentIndex - 1 + imageFilenames.length) % imageFilenames.length; // Go backward
+  } else {
+    // Clicked on the right side of the image
+    currentIndex = (currentIndex + 1) % imageFilenames.length; // Go forward
+  }
+  var image = document.getElementById("displayedImage");
+  image.src = imageFilenames[currentIndex]; // Update src directly without fade
+}
+
+// Add click event listener to the displayed image
+document.getElementById("displayedImage").addEventListener("click", changeImage);
+
+// Load the first image
+document.getElementById("displayedImage").src = imageFilenames[currentIndex];
+
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>   
+    <script src="/main.js"></script>
+    
+</body>
+</html>

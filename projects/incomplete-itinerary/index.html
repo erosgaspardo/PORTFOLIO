@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Eros Gaspardo">
+    <meta name="description" content="Eros Gaspardo is a photographer and visual artist working between Venice and Urbino">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/icons/favicon/site.webmanifest">
+    <link rel="stylesheet" href="/styles.css" />
+
+    <title>Incomplete Itinerary</title>
+
+</head>
+<body>
+  <div class="main-container">
+    <div class="nav">
+        <ul>
+        <li class="nav-item"><a href="/index.html">eros gaspardo</a></li>
+        </ul>
+        <ul class="nav-right">
+        <li class="nav-item"><a href="/about/index.html">about</a></li>
+    </ul>    
+    </div>
+
+<div class="image-container">
+  <img id="displayedImage" src="./atena/1.jpg">
+
+  
+</div>
+
+<div class="bottom-info">
+    <div class="left">
+            <div class="projectname">incomplete itinerary</div>
+            
+    </div>
+<div class="right">
+    <div class="moreinfo">info &#8628</div>
+</div>
+
+</div>
+
+</div>
+<div class="project-text">
+    From 1945 onwards - and throughout the economic boom - the Ambrosian diocese was elevate with churches. In Milan itself, were built more then 300. In that historical moment, the spaces were an expression of the experimentation of famous architects. The project is an attempt to investigate the well-known works of architects among the cities of Milan, Varese and Pavia.
+  <br>
+  <br> 
+  Incomplete Itinerary - 24 Contemporary Churches in Lombardy traces an itinerary that lead to an unordinary path. In both the exhibition and the publication, the viewer is guided by a geographical map that locates the ecclesiastical buildings in the three areas explored, describing the traced "incomplete itinerary".  
+  <br>   
+  <br>
+  ISIA U 2023
+  <br>
+  <br>
+  Curation by <b><a href="https://instagram.com/albsinigaglia/">Alberto Sinigaglia</a></b>
+  <br>   
+  <br>
+  Editorial Project by <b><a href="https://instagram.com/teo_mariax/">Matteo Mariangioli</a>, <a href="https://instagram.com/aureale_/">Aurora Pelaggi</a></b>
+</div>
+<script>
+var imageFilenames = [];
+var currentIndex = 0;
+var slideshowInterval; // Variable to hold the interval for the slideshow
+
+// Populate the image filenames array (assuming image filenames are sequential)
+var numberOfImages = 8; // Adjust this to the number of images you have
+var folderPath = "/projects/incomplete-itinerary/architettura/"; // Change this to your folder path
+for (var i = 1; i <= numberOfImages; i++) {
+  imageFilenames.push(folderPath + i + ".jpg");
+}
+
+// Function to change the displayed image
+function changeImage(nextIndex) {
+  currentIndex = nextIndex % imageFilenames.length;
+  var image = document.getElementById("displayedImage");
+  image.src = imageFilenames[currentIndex]; // Update src directly without fade
+}
+
+// Function to advance to the next image
+function nextImage() {
+  changeImage(currentIndex + 1);
+}
+
+// Add click event listener to the displayed image
+document.getElementById("displayedImage").addEventListener("click", function(event) {
+  clearInterval(slideshowInterval); // Clear slideshow interval on click
+  changeImage(event.clientX - this.getBoundingClientRect().left < this.offsetWidth / 2 ? currentIndex - 1 : currentIndex + 1);
+});
+
+// Start the slideshow
+slideshowInterval = setInterval(nextImage, 3000); // Change 3000 to the desired interval in milliseconds
+
+// Load the first image
+document.getElementById("displayedImage").src = imageFilenames[currentIndex];
+
+
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>   
+    <script src="/main.js"></script>
+    
+</body>
+</html>
