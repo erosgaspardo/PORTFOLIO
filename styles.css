@@ -145,5 +145,9 @@ h1 {
         background-image: none;
         align-content: start;
     }
+
+    .main-container {
+      height:auto;
+    }
 }
 
