@@ -139,6 +139,7 @@ h1 {
         color: #929292;
         height: 100vh;
         background-image: none;
+        align-content: start;
     }
 }
 
