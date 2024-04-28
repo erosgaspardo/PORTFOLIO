@@ -131,6 +131,7 @@ h1 {
         width: auto;
         height: auto;
         padding: 1em;
+        align-content: start;
       }
 
       .grid {
