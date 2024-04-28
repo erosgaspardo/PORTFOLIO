@@ -127,11 +127,11 @@ h1 {
     }
 
     .project-text {
-        display: inline-block;
+        display: block;
         width: auto;
         height: auto;
-        padding: 1em;
-        align-content: start;
+        padding: 0 1em;
+        margin: 0;
       }
 
       .grid {
