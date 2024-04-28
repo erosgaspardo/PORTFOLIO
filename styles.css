@@ -127,7 +127,7 @@ h1 {
     }
 
     .project-text {
-        display: block;
+        display: inline-block;
         width: auto;
         height: auto;
         padding: 1em;
