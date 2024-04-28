@@ -137,6 +137,11 @@ h1 {
         height: 100vh;
         background-image: none;
         align-content: start;
+        width: 100%;
+    }
+
+    .grid div {
+      padding-bottom: 2em;
     }
 
     .main-container {
