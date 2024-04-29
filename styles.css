@@ -36,8 +36,10 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+  color: blue;
 }
+
 
 .image-container {
     width: 100vw;
