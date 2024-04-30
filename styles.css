@@ -171,5 +171,10 @@ h1 {
       display:none;
     }
 
+    .text-container {
+      display: flex;
+      align-items: flex-start;
+    }
+
 }
 
