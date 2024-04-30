@@ -101,6 +101,19 @@ h1 {
   padding-bottom: 3em;
 }
 
+.background-image {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: end;
+}
+
+.background {
+  width: 500px;
+  position: absolute;
+  padding: 2em 2em 0 0;
+}
+
   
 @media only screen and (min-device-width: 320px) 
   and (max-device-width: 480px) {
@@ -153,5 +166,7 @@ h1 {
     .main-container {
       height: 100%;
     }
+
+
 }
 

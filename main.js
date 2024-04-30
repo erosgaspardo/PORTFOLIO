@@ -81,3 +81,10 @@ gsap.from('.bottom-info', {
   opacity: 0,
   ease: "power3.inOut"
 })
+
+gsap.from('.background', {
+    autoAlpha: 0,
+    duration: 1.5,
+    delay: 1,
+    ease: "power3.inOut"
+})
