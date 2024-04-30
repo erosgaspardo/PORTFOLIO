@@ -144,9 +144,9 @@ h1 {
 
     .project-text {
         display: block;
-        width: auto;
         padding: 0 1em;
         margin: 0;
+        height: auto;
       }
 
       .grid {
